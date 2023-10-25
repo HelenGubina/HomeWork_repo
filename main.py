@@ -11,16 +11,15 @@ import os
 
 fpath = os.path.join("e:", "text.txt")
 f = open(fpath, "r")
-fpath1 = os.path.join("e:", "text1.txt")
-f1 = open(fpath1, "r")
+linenumber = int(input("input number of line for deletion:"))
 list1 = f.readlines()
-list2 = f1.readlines()
-for line in list1:
-    try:
-        if line != list2[list1.index(line)]:
-            print(line)
-    except IndexError:
-        print(line)
-
+list1.remove(list1[linenumber])
 f.close()
-f1.close()
+f = open(fpath, "w")
+strnew = ""
+
+for line in list1:
+    strnew += line
+
+f.write(strnew)
+f.close()
