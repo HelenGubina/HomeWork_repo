@@ -1,15 +1,13 @@
 
-# word = "summer"
-# try:
-#     print(word[3])
-#     print(word[6])
-# except IndexError:
-#     print("incorrect index")
-#
-# a = input()
+import os
+
+fpath = os.path.join("e:","text1.txt")
+print(fpath)
 try:
-    a = float(input("Input number 1: "))
-    b = float(input("Input number 2: "))
-except ValueError:
-    print("incorrect value")
+    f = open(fpath, "r")
+    print(f.read())
+    f.close()
+except FileNotFoundError:
+    print("No such file or directory")
+
 
