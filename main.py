@@ -1,13 +1,8 @@
 
-import os
-
-fpath = os.path.join("e:","text1.txt")
-print(fpath)
+a = float(input("input number 1:"))
+b = float(input("input number 2:"))
 try:
-    f = open(fpath, "r")
-    print(f.read())
-    f.close()
-except FileNotFoundError:
-    print("No such file or directory")
-
-
+    c = a / b
+    print(c)
+except ZeroDivisionError:
+    print("You can divide by zero")
